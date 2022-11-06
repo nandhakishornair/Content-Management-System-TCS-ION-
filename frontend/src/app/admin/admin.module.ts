@@ -21,10 +21,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
+import { ManageAdminComponent } from './manage-admin/manage-admin.component';
+import {MatTableModule} from '@angular/material/table';
+
 @NgModule({
   declarations: [
     AdminComponent,
-    LoginComponent
+    LoginComponent,
+    ManageAdminComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +45,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatTabsModule,
     MatListModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
     
   ]
 })

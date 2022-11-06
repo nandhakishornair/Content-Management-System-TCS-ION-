@@ -1,17 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from './footer/footer.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { UserService } from './user.service';
+import { AdminService } from './admin.service';
+import { HttpClientModule} from '@angular/common/http';
+
 
 
 @NgModule({
-  declarations: [
-    FooterComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
-    MatToolbarModule
+    HttpClientModule 
   ],
-  exports:[FooterComponent]
+  exports:[]
+  
 })
-export class SharedModule { }
+export class SharedModule { 
+  static forRoot() {
+    return {
+      ngModule: SharedModule,
+      providers: [
+        UserService,AdminService
+      ],
+    };
+ }
+}
