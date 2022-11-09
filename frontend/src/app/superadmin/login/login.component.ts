@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from 'src/app/shared/admin.service';
+import { SuperadminService } from 'src/app/shared/superadmin.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,19 +7,17 @@ import { AdminService } from 'src/app/shared/admin.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service :AdminService) { }
+  constructor(private service:SuperadminService) { }
   login={
     email:'',
     password:''
     }
   ngOnInit(): void {
-    
   }
   hide = true;
-
-  adminlogin(){
-    this.service.adminLogin(this.login).subscribe((data)=>{
-      console.log("subscribed data",data)
+  superadminlogin(){
+    this.service.SupreadminLogin(this.login).subscribe((data)=>{
+      console.log("the data from backend is :::",data)
     })
   }
 }

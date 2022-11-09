@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { AdminRoutingModule } from './admin-routing.module';
-import { AdminComponent } from './admin.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ManageAdminComponent } from './manage-admin/manage-admin.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
+import { SuperadminComponent } from './superadmin/superadmin.component';
+import { SuperadminRoutingModule } from './superadmin-routing.module';
 
 import{MatSelectModule}from '@angular/material/select'
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -21,20 +23,23 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
-import { ManageAdminComponent } from './manage-admin/manage-admin.component';
 import {MatTableModule} from '@angular/material/table';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+
+
 
 @NgModule({
   declarations: [
-    AdminComponent,
     LoginComponent,
+    DashboardComponent,
     ManageAdminComponent,
-    AdminDashboardComponent
+    ManageUserComponent,
+    SuperadminComponent,
+    
   ],
   imports: [
+    SuperadminRoutingModule,
     CommonModule,
-    AdminRoutingModule,
+    CommonModule,
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
@@ -49,7 +54,6 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     FlexLayoutModule,
     MatButtonModule,
     MatTableModule
-    
   ]
 })
-export class AdminModule { }
+export class SuperadminModule { }

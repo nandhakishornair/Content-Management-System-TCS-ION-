@@ -9,7 +9,8 @@ const routes: Routes = [
   children:[{path:'login',component:UserloginComponent},
 {path:'signup',component:UserSignupComponent}]
   },
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'superadmin', loadChildren: () => import('./superadmin/superadmin.module').then(m => m.SuperadminModule) }
 ];
 
 @NgModule({

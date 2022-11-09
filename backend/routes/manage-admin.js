@@ -1,4 +1,4 @@
-const adminmodel = require("../models/manage-admin");
+const adminmodel = require("../models/admindata");
 const express = require("express");
 const route = express.Router();
 
