@@ -23,14 +23,22 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { ManageAdminComponent } from './manage-admin/manage-admin.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatChipsModule} from '@angular/material/chips';
+
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { LatestpostsComponent } from './latestposts/latestposts.component';
+import { ViewCategoryComponent } from './view-category/view-category.component';
+import { CreateCategoryComponent } from './create-category/create-category.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
     LoginComponent,
     ManageAdminComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    LatestpostsComponent,
+    ViewCategoryComponent,
+    CreateCategoryComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +56,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     MatListModule,
     FlexLayoutModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatChipsModule
     
   ]
 })

@@ -1,1 +1,13 @@
-<p>admin-dashboard works!</p>
+<div class="container">
+    <mat-selection-list class="category" #shoes [multiple]="false">
+        <mat-list-option routerLink="latest">latest posts</mat-list-option> 
+        <mat-list-option routerLink="viewCategory">view categorys</mat-list-option>
+        <mat-list-option routerLink="createCategory">add new category</mat-list-option>
+        <!-- <mat-list-option>asdasdasd</mat-list-option> -->
+      </mat-selection-list>
+</div>
+<div>
+   <router-outlet></router-outlet>
+</div>
+
+  

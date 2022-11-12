@@ -1,18 +1,18 @@
-const adminModel = require("../models/admindata");
+const adminModel = require("../models/admin-and-users");
 const express = require("express");
 const { default: mongoose } = require("mongoose");
 const { json } = require("express");
 const route = express.Router();
 const bcrypt =require ("bcrypt");
+const CategoryAndPost = require("../models/category")
 // const { object } = require("joi");
 
 
 
 route.post("/login", (req, res) => {
   console.log("inside the login route", req.body);
-  // let email=req.body.email;
-  // let pass = req.body.pass;
-  adminModel.findOne({ email: req.body.email }, (err, data) => {
+  
+  adminModel.findOne({ email: req.body.email ,isAdmin:true}, (err, data) => {
     if (err) {
       console.log(err);
       res.send(err)
@@ -40,5 +40,24 @@ else{
 }
   });
 });
+
+route.get("/landing",(req,res)=>{
+CategoryAndPost.find().then((data)=>{
+  res.send(data);
+})
+})
+
+route.post("/addCategory", async(req, res) => {
+  console.log("body in signup route", req.body);
+    let datas = {
+      category:req.body.category
+    };
+    let data = new CategoryAndPost(datas);
+    data.save();
+    res.json({message:"new user data saving,,,"})
+  } 
+ 
+ 
+);
 
 module.exports = route;

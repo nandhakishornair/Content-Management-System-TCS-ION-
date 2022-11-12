@@ -1,4 +1,4 @@
-const usersModel = require("../models/usermodel");
+const usersModel = require("../models/admin-and-users");
 const express = require("express");
 const { default: mongoose } = require("mongoose");
 const { json } = require("express");
@@ -38,7 +38,7 @@ route.post("/login", (req, res) => {
   console.log("inside the login route", req.body);
   // let email=req.body.email;
   // let pass = req.body.pass;
-  usersModel.findOne({ email: req.body.email }, (err, data) => {
+  usersModel.findOne({ email: req.body.email ,isAdmin:false}, (err, data) => {
     if (err) {
       console.log(err);
       res.json({"message":"enter valid email"})
@@ -46,17 +46,7 @@ route.post("/login", (req, res) => {
     } else {
       console.log("user email  is matching");
       console.log("data", data);
-      // let x = JSON.parse(JSON.stringify(data));
-      // console.log("password", x.password);
-      // if (data.password === x.password) {
-      //   console.log("password is matching ");
-      //   res.json({"message":"password matching"})
-      //   // res.send("matching")
-      // } else {
-      //   // res.send("wrong email")
-      //   console.log("err");
-      //   res.json({"message":"invalid password"})
-      // }
+      
       bcrypt.compare(req.body.password,data.password , (err,resp)=>{
         if(err){
           console.log("error in bcrypt")

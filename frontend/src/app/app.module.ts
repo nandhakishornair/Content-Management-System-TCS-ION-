@@ -35,7 +35,7 @@ import {MatRadioModule} from '@angular/material/radio';
    HeaderComponent,
    UserloginComponent,
    UserSignupComponent,
-   UserComponent,
+   UserComponent
    
   ],
   imports: [
