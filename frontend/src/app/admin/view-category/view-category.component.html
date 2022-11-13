@@ -1,1 +1,30 @@
-<p>view-category works!</p>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+           category 1 
+        </mat-panel-title>
+        <mat-panel-description>
+            a category to submit your doubts 
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <button  mat-button color="secondary" routerLink="/admin/dashboard/posts"
+           >view all posts in this category
+    </button>
+    <mat-divider></mat-divider>
+    <div class="del_upd">
+        <div class="delete">
+            <p>delete category</p>
+            <button mat-icon-button>
+                <mat-icon class="del_icon" aria-label="label">delete</mat-icon>    
+            </button>
+        </div>
+        <div class="update">
+            <p>update category</p>
+            <button mat-icon-button>
+                <mat-icon class="upd_icon" aria-label="label">update</mat-icon>    
+            </button>
+        </div>
+    </div>
+    
+</mat-expansion-panel>

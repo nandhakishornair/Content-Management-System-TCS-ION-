@@ -50,10 +50,10 @@ CategoryAndPost.find().then((data)=>{
 route.post("/addCategory", async(req, res) => {
   console.log("body in signup route", req.body);
     let datas = {
-      category:req.body.category
+      categoryTitle:req.body.categoryTitle
     };
     let data = new CategoryAndPost(datas);
-    data.save();
+    data.save().then(console.log("saved successfully"));
     res.json({message:"new user data saving,,,"})
   } 
  

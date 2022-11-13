@@ -5,12 +5,14 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ViewCategoryComponent } from './view-category/view-category.component';
 import { LatestpostsComponent } from './latestposts/latestposts.component';
 import { CreateCategoryComponent } from './create-category/create-category.component';
+import { PostsComponent } from './posts/posts.component';
+
 const routes: Routes = [{ path: '', component: LoginComponent },
  {path:"dashboard",component:AdminDashboardComponent,children:[
-    {path:"latest",component:LatestpostsComponent},
-    {path:"viewCategory",component:ViewCategoryComponent},
-    {path:"createCategory",component:CreateCategoryComponent}
-    
+    {path:"",component:LatestpostsComponent},
+    {path:"viewCategory",component:ViewCategoryComponent , children:[]},
+    {path:"createCategory",component:CreateCategoryComponent},
+    {path:"posts",component:PostsComponent}
  ]}
 ];
 

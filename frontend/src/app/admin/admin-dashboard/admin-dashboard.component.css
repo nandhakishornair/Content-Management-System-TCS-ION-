@@ -6,6 +6,13 @@
   }
   .container{
     background-color: aliceblue;
-    margin-left: 0px;
+    margin-left: 3vw;
     margin-top: 10vh;
+    display: flex;
+    min-height: 100vh;
+    min-width: 90vw;
+  }
+  .outlet{
+    width: 100%;
+    background-color: rgb(245, 198, 137);
   }

@@ -13,4 +13,7 @@ return this.http.post("http://localhost:3000/admin/login",data)
   GetPostAndCategory(){
 return this.http.get("http://localhost:3000/admin/landing")
   }
+  createCategory(data:any){
+return this.http.post("http://localhost:3000/admin/addCategory",data)
+  }
 }
