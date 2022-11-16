@@ -25,7 +25,7 @@ import { ManageAdminComponent } from './manage-admin/manage-admin.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatExpansionModule} from '@angular/material/expansion';
- 
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { LatestpostsComponent } from './latestposts/latestposts.component';
@@ -33,7 +33,8 @@ import { ViewCategoryComponent } from './view-category/view-category.component';
 import { CreateCategoryComponent } from './create-category/create-category.component';
 import { PostsComponent } from './posts/posts.component';
 import { SinglePostComponent } from './single-post/single-post.component';
-
+// import { updateForm } from './view-category/view-category.component';
+import { UpdateFormComponent } from './update-form/update-form.component';
 @NgModule({
   declarations: [
     AdminComponent,
@@ -44,7 +45,8 @@ import { SinglePostComponent } from './single-post/single-post.component';
     ViewCategoryComponent,
     CreateCategoryComponent,
     PostsComponent,
-    SinglePostComponent
+    SinglePostComponent,
+    UpdateFormComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +66,8 @@ import { SinglePostComponent } from './single-post/single-post.component';
     MatButtonModule,
     MatTableModule,
     MatChipsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule
     
   ]
 })

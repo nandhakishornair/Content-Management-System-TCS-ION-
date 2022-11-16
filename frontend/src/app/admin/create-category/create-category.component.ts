@@ -10,7 +10,8 @@ import { MatAccordion } from '@angular/material/expansion';
 export class CreateCategoryComponent implements OnInit {
   constructor(private service: AdminService) {}
   category = {
-    categoryTitle: ''
+    categoryTitle: '',
+    description:''
   };
   ngOnInit(): void {}
   createCategory(){

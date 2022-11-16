@@ -1,14 +1,43 @@
 <div class="container">
-<mat-card>
+  <mat-card>
+    <mat-card-content></mat-card-content>
+    <div></div>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <button class="add" mat-icon-button>
+            <mat-icon aria-label="label">add</mat-icon>
+          </button>
+        </mat-panel-title>
+        <mat-panel-description> add new post </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+
+      <mat-divider></mat-divider>
+      <form (ngSubmit)="createpost()" class="example-form">
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput name="title" [(ngModel)]="post.heading" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <input matInput name="Description" [(ngModel)]="post.description" />
+        </mat-form-field>
+
+        <button type="submit" mat-flat-button class="create">create</button>
+      </form>
+    </mat-expansion-panel>
+  </mat-card>
+
+  <mat-card>
     <mat-card-header>
-        <mat-card-title>title</mat-card-title>
-        <!-- <mat-card-subtitle>sub-header</mat-card-subtitle> -->
+      <mat-card-title>title</mat-card-title>
+      <!-- <mat-card-subtitle>sub-header</mat-card-subtitle> -->
     </mat-card-header>
-    <mat-card-content>
-        content
-    </mat-card-content>
+    <mat-card-content> content </mat-card-content>
     <mat-card-actions>
-        <button mat-raised-button>view post</button>
-        </mat-card-actions>
-</mat-card>
+      <button mat-raised-button>view post</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

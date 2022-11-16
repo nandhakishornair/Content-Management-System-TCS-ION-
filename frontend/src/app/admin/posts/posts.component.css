@@ -1,3 +1,22 @@
 /* .post{
     height: 15vh;
 } */
+.add{
+    background-color: rgb(125, 228, 125);
+}
+
+  
+.example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  mat-form-field{
+    width: 100%;
+  }
+  .container{
+    width:100%;
+  }
+  .createCategory{
+    width:100%;
+  }

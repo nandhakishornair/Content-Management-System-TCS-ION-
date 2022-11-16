@@ -28,6 +28,7 @@ import { UserComponent } from './user/user.component';
 import{MatSelectModule}from '@angular/material/select'
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import {MatRadioModule} from '@angular/material/radio';
    HeaderComponent,
    UserloginComponent,
    UserSignupComponent,
-   UserComponent
+   UserComponent,
+   UserDashboardComponent
    
   ],
   imports: [
