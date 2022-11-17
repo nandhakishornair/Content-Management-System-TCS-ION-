@@ -9,13 +9,13 @@ import { UpdateFormComponent } from '../update-form/update-form.component';
 })
 export class ViewCategoryComponent implements OnInit {
 
-  name = [{ categoryTitle: '', description: '' }];
+  name = [{_id:'', categoryTitle: '', description: '' }];
 
   constructor(private service: AdminService, public dialog: MatDialog) {}
 
-  openDialog(title:any,description:any) {
+  openDialog(id:any,title:any,description:any) {
     console.log("inside open",title)
-    const dialogRef = this.dialog.open(UpdateFormComponent , {data: {title: title,description:description}});
+    const dialogRef = this.dialog.open(UpdateFormComponent , {data: {_id:id,title: title,description:description}});
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });

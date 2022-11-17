@@ -1,0 +1,9 @@
+.sidenav{
+    width:20%;
+    background-color: aquamarine;
+}
+.container{
+    /* background-color: blue; */
+    margin-left: 0px;
+    /* width: 100%; */
+}

@@ -31,7 +31,13 @@ return this.http.post("http://localhost:3000/admin/addCategory",data)
   deleteCategory(categoryName:any){
     return this.http.delete("http://localhost:3000/admin/deleteCategory/"+categoryName)
   }
-  // updateCategory(categoryTitle:any){
-  //   return this.http.put<any>("http://localhost:3000/admin/UpdateCategory/"+categoryTitle)
+  updateCategory(data:any){
+    return this.http.put("http://localhost:3000/admin/updateCategory",data)
+  }
+  updatePost(data:any){
+    return this.http.put("http://localhost:3000/admin/updatePost",data)
+  }
+  // deletePost(categoryName:any){
+  //   return this.http.delete("http://localhost:3000/admin/deleteCategory/"+categoryName)
   // }
 }

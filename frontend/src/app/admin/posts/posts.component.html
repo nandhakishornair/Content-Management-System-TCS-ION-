@@ -25,19 +25,36 @@
           <input matInput name="Description" [(ngModel)]="post.description" />
         </mat-form-field>
 
-        <button type="submit" mat-flat-button class="create">create</button>
+        <button type="submit" mat-flat-button  class="create">create</button>
       </form>
     </mat-expansion-panel>
   </mat-card>
-
-  <mat-card>
+<ng-container *ngFor="let item of posts">
+  <mat-card class="card">
     <mat-card-header>
-      <mat-card-title>title</mat-card-title>
+      <mat-card-title>{{item.heading}}</mat-card-title>
       <!-- <mat-card-subtitle>sub-header</mat-card-subtitle> -->
     </mat-card-header>
-    <mat-card-content> content </mat-card-content>
+    <mat-card-content> {{item.description}} </mat-card-content>
+
+    <div class="del_upd">
+      <div class="delete">
+          <p>delete post</p>
+          <button mat-icon-button (click)="delete(item._id)">
+              <mat-icon class="del_icon" aria-label="label">delete</mat-icon>    
+          </button>
+      </div>
+      <div class="update">
+          <p>update post</p>
+          <button mat-icon-button (click)="openDialog(item._id,item.heading,item.description)">
+              <mat-icon class="upd_icon" aria-label="label">edit</mat-icon>    
+          </button>
+      </div>
+  </div>
     <mat-card-actions>
       <button mat-raised-button>view post</button>
     </mat-card-actions>
   </mat-card>
+</ng-container>
+  
 </div>

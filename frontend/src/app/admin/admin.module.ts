@@ -35,6 +35,7 @@ import { PostsComponent } from './posts/posts.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 // import { updateForm } from './view-category/view-category.component';
 import { UpdateFormComponent } from './update-form/update-form.component';
+import { PostFormComponent } from './post-form/post-form.component';
 @NgModule({
   declarations: [
     AdminComponent,
@@ -46,7 +47,8 @@ import { UpdateFormComponent } from './update-form/update-form.component';
     CreateCategoryComponent,
     PostsComponent,
     SinglePostComponent,
-    UpdateFormComponent
+    UpdateFormComponent,
+    PostFormComponent
   ],
   imports: [
     CommonModule,

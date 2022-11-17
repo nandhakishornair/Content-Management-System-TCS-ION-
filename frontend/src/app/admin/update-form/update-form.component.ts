@@ -19,6 +19,9 @@ category={
   }
   update(data:any){
     console.log("in form",data)
+    this.service.updateCategory(data).subscribe((data)=>{
+      console.log("from back",data)
+    })
   }
 
 }
