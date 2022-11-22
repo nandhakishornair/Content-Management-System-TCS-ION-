@@ -4,7 +4,12 @@ import { UserSignupComponent } from './user-signup/user-signup.component';
 import { UserComponent } from './user/user.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-
+import { UserLatestPostComponent } from './user-latest-post/user-latest-post.component';
+import { UserEditPostComponent } from './user-edit-post/user-edit-post.component';
+import { UserYourPostsComponent } from './user-your-posts/user-your-posts.component';
+import { UserCreatePostComponent } from './user-create-post/user-create-post.component';
+import { UserSinglPostComponent } from './user-singl-post/user-singl-post.component';
+import { UserPostInCategoryComponent } from './user-post-in-category/user-post-in-category.component';
 const routes: Routes = [
   {
     path: '',
@@ -12,8 +17,18 @@ const routes: Routes = [
     children: [
       { path: 'login', component: UserloginComponent },
       { path: 'signup', component: UserSignupComponent },
-      { path: 'dashboard', component: UserDashboardComponent, 
-      children: [] },
+      {
+        path: 'dashboard',
+        component: UserDashboardComponent,
+        children: [
+          { path: 'latestPosts', component: UserLatestPostComponent },
+          { path: 'editPost', component: UserEditPostComponent },
+          {path:'yourPosts',component:UserYourPostsComponent},
+          {path:'createPost',component:UserCreatePostComponent},
+          {path:'singlePost',component:UserSinglPostComponent},
+          {path:'postInCategory',component:UserPostInCategoryComponent}
+        ],
+      },
     ],
   },
   {

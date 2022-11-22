@@ -1,9 +1,20 @@
 .sidenav{
     width:20%;
-    background-color: aquamarine;
+    background-color:rgb(149, 149, 243);
 }
-.container{
-    /* background-color: blue; */
-    margin-left: 0px;
-    /* width: 100%; */
-}
+
+.outlet{
+    width: 100%;
+    /* background-color: rgb(245, 198, 137); */
+  }
+  .category{
+    max-width:300px;
+     }
+     .container{
+       background-color: aliceblue;
+       margin-left: 3vw;
+       margin-top: 10vh;
+       display: flex;
+       min-height: 100vh;
+       min-width: 90vw;
+     }

@@ -28,7 +28,17 @@ import { UserComponent } from './user/user.component';
 import{MatSelectModule}from '@angular/material/select'
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { UserLatestPostComponent } from './user-latest-post/user-latest-post.component';
+import { UserEditPostComponent } from './user-edit-post/user-edit-post.component';
+import { UserYourPostsComponent } from './user-your-posts/user-your-posts.component';
+import { UserCreatePostComponent } from './user-create-post/user-create-post.component';
+import { UserSinglPostComponent } from './user-singl-post/user-singl-post.component';
+import { UserPostInCategoryComponent } from './user-post-in-category/user-post-in-category.component';
 
 
 @NgModule({
@@ -40,6 +50,14 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
    UserSignupComponent,
    UserComponent,
    UserDashboardComponent,
+   UserLatestPostComponent,
+   UserEditPostComponent,
+   UserYourPostsComponent,
+   UserCreatePostComponent,
+   UserSinglPostComponent,
+   UserPostInCategoryComponent,
+  
+   
    
   ],
   imports: [
@@ -63,7 +81,10 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     SharedModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

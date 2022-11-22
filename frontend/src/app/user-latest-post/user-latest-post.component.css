@@ -1,0 +1,27 @@
+/* .container{} */
+.toolbar{
+    background-color: rgb(149, 149, 243);
+    width: 100%;
+    height: 40px;
+}
+.bu{
+    background-color: rgb(165, 208, 246);
+}
+.container{
+    display: flex;
+}
+.posts{
+width:70%;
+margin-right: 10px;
+background-color: rgb(220, 236, 250);
+}
+.categories{
+    width:50%;
+}
+mat-chip{
+    width:100px
+}
+.displayYourPost:hover{
+    transform: scale(1.02);
+    /* cursor: pointer; */
+   }

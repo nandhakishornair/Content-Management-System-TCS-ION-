@@ -24,8 +24,9 @@ import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
-
-
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
+ 
 
 @NgModule({
   declarations: [
@@ -53,7 +54,10 @@ import {MatTableModule} from '@angular/material/table';
     MatListModule,
     FlexLayoutModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule,
+    MatToolbarModule,
+    MatDialogModule
   ]
 })
 export class SuperadminModule { }

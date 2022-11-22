@@ -4,7 +4,8 @@ const PostSchema = mongoose.Schema({
     email:String,
     heading:String,
     description:String,
-    category:String
+    category:String,
+    time : { type : Date, default: Date.now }
 });
 
 

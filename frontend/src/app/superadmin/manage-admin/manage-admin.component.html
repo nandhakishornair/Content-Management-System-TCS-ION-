@@ -1,48 +1,65 @@
-<table   mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="container">
+  <div class="toolbar">
+    <mat-toolbar>
+      <span>manage admins </span>
+    </mat-toolbar>
+  </div>
+  <ng-container *ngFor="let item of admins">
+    <div class="displayYourPost">
+      <mat-card fxLayout="row" fxLayoutAlign="space-around centre">
+        <mat-card-header>
+          <mat-card-title><button
+            mat-button
+            matTooltipHideDelay="200"
+            #tooltip="matTooltip"
+            matTooltip="you"
+          >
+            <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+              >account_circle</mat-icon
+            >
+          </button></mat-card-title>
+          <mat-card-subtitle class="des">{{
+            item.email
+          }}</mat-card-subtitle>
+        </mat-card-header>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
+        <!-- <mat-card-content> content </mat-card-content> -->
 
-    <ng-container matColumnDef="action1">
-        <th mat-header-cell  *matHeaderCellDef > Action1 </th>
-        <td mat-cell *matCellDef="let element" >
-             <button mat-button >Edit</button>
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="action2">
-        <th mat-header-cell  *matHeaderCellDef > Action2 </th>
-        <td mat-cell *matCellDef="let element" >
-             <button mat-button >Delete</button>
-        <td>
-      </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  
-  
+        <mat-card-actions>
+          <button (click)="changePrivilage(item.email)"
+          matTooltip="remove admin privilage">
+            <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+              >person_remove</mat-icon
+            >
+          </button>
+          <!-- <button mat-button  matTooltipHideDelay="200" #tooltip="matTooltip"
+          matTooltip="delete Post">
+            <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+              >delete</mat-icon
+            >
+          </button> -->
+          <!-- <button routerLink="/dashboard/singlePost"
+              mat-button
+              matTooltipHideDelay="200"
+              #tooltip="matTooltip"
+              matTooltip="view post"
+            >
+              <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+                >preview</mat-icon
+              >
+            </button> -->
+          <!-- <button
+            mat-button
+            matTooltipHideDelay="200"
+            #tooltip="matTooltip"
+            matTooltip="you"
+          >
+            <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+              >account_circle</mat-icon
+            >
+          </button> -->
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-container>
+</div>

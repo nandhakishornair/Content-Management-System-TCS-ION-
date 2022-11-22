@@ -1,0 +1,38 @@
+mat-toolbar{
+    height:40px;
+    background-color: rgb(149, 149, 243);
+    width: 100%;
+    margin-bottom: 10px;
+}
+.add{
+    color: green;  
+}
+.a{
+display: flex;
+}
+.displayYourPost .u{
+    display: none;
+} 
+
+.displayYourPost:hover .u{
+ 
+ display: block;
+ 
+}
+.displayYourPost:hover{
+     transform: scale(1.02); 
+    /* display: block; */
+    /* cursor: pointer; */
+   }
+
+
+.displayYourPost{
+    margin-bottom: 8px;
+    text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+    }
+    .des{
+        max-width: 200px;
+        min-width: 100px;
+        text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+    }
+   
