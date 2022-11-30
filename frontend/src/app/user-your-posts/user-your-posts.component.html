@@ -33,7 +33,7 @@
               #tooltip="matTooltip"
               matTooltip="view post"
             >
-              <mat-icon class="u" aria-hidden="false" aria-label="{2:label} icon"
+              <mat-icon (click)="preview(item._id)" class="u" aria-hidden="false" aria-label="{2:label} icon"
                 >preview</mat-icon
               >
             </button>

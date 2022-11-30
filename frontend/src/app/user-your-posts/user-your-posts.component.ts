@@ -43,11 +43,16 @@ description:''
       this.service.deletePost(id).subscribe((data)=>{
         console.log(data)
       })
+    }).then(()=>{
+      this.ngOnInit();
     })
   }
   savePostid(id:any){
     localStorage.removeItem("postid");
     localStorage.setItem("postid",id)
   }
-
+  preview(id: any) {
+    localStorage.removeItem('previewid');
+    localStorage.setItem('previewid', id);
+  }
 }

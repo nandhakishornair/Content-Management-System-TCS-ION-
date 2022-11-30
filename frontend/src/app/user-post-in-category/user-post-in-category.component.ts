@@ -10,6 +10,8 @@ y=localStorage.getItem("category");
 posts=[{
   heading:'',
   description:'',
+  _id:'',
+  email:''
 
 }]
   constructor(private service:UserService) { }
@@ -23,5 +25,8 @@ this.service.viewPostsInCategory(x).subscribe((data)=>{
   this.posts = post
 })
   }
-
+  preview(id: any) {
+    localStorage.removeItem('previewid');
+    localStorage.setItem('previewid', id);
+  }
 }

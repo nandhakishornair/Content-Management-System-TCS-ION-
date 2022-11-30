@@ -1,0 +1,9 @@
+mat-toolbar{
+    height:40px;
+    background-color: rgb(149, 149, 243);
+    width: 100%;
+    margin-bottom: 10px;
+}
+mat-card{
+    margin-bottom: 1%;
+}

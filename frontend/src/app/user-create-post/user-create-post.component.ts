@@ -2,6 +2,9 @@ import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import { UserService } from '../shared/user.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-user-create-post',
   templateUrl: './user-create-post.component.html',
@@ -15,7 +18,7 @@ export class UserCreatePostComponent implements OnInit {
   //   secondCtrl: ['', Validators.required],
   // });
   isEditable = true;
-  constructor(private _formBuilder: FormBuilder,private service :UserService ) { }
+  constructor(private _formBuilder: FormBuilder,private service :UserService,private router :Router ) { }
 data={
     // email:'',
     heading:'',
@@ -38,6 +41,22 @@ create(data:any){
   console.log(data)
 this.service.createPost(data).subscribe((data)=>{
   console.log("from back",data)
+  let x = JSON.stringify(data)
+  if(x.match(/successfully/)){
+    console.log("succ")
+    Swal.fire({
+      toast: true,
+      color: 'green',
+      // background:'whit',
+      icon: 'success',
+      title: 'post created successfully',
+      position: 'center-right',
+      showConfirmButton: false,
+      timer: 3000,
+    }).then(()=>{
+      this.router.navigate(['/dashboard'])
+    })
+  }
 })
 }
 }

@@ -19,9 +19,26 @@ background-color: rgb(220, 236, 250);
     width:50%;
 }
 mat-chip{
-    width:100px
+    width:150px
 }
 .displayYourPost:hover{
     transform: scale(1.02);
     /* cursor: pointer; */
    }
+   .des{
+    max-width: 100px;
+    min-width: 100px;
+    text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+}
+.displayYourPost .u{
+    display: none;
+} 
+
+.displayYourPost:hover .u{
+ 
+ display: block;
+ 
+}
+.displayYourPost{
+margin-bottom: 1%;
+}

@@ -18,10 +18,11 @@ export class UserloginComponent implements OnInit {
   hide = true;
   userdata() {
     console.log(this.login);
-    this.user.userlogin(this.login).subscribe((data) => {
+    this.user.userlogin(this.login).subscribe((data:any) => {
+      localStorage.setItem('user-token',data.tok);
       console.log('data from backend in user login compt', data);
       let regx = /password matching/;
-      let x = JSON.stringify(data);
+      let x = JSON.stringify(data.message);
       if (x.match(regx)) {
         console.log('succ:');
         Swal.fire({
@@ -37,6 +38,20 @@ export class UserloginComponent implements OnInit {
           this._router.navigate(['/dashboard'])
           localStorage.setItem("email",this.login.email)
         })
+      }
+      else{
+        Swal.fire({
+          toast: true,
+          color:'red',
+          background:'yellow',
+          icon: 'error',
+          title: 'wrong email or password',
+          position: 'center-right',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          
+        });
       }
     });
   }

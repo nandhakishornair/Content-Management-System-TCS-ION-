@@ -8,12 +8,14 @@
     </div>
 
     <a mat-button class="companyName" routerLink="/">
-      <span>Site name</span>
+      <span><img class="logo"src="../assets/blog.png" alt="image"></span>
     </a>
     <span class="example-spacer"></span>
     <div fxShow="true" fxHide.lt-md="true">
-      <a mat-button routerLink="login">login</a>
+      <a mat-button routerLink="">login</a>
       <a mat-button routerLink="signup">signup</a>
+      
+      <a mat-button routerLink="logout">logout</a>
     </div>
   </mat-toolbar>
   <mat-sidenav-container fxFlexFill class="example-container">
@@ -26,7 +28,7 @@
       fxHide.gt-sm="true"
     >
       <div fxLayout="column">
-        <a mat-button routerLink="login">Login</a>
+        <a mat-button routerLink="">Login</a>
         <a mat-button routerLink="signup">Signup</a>
       </div>
     </mat-sidenav>

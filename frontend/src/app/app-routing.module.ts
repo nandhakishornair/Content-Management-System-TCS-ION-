@@ -10,18 +10,20 @@ import { UserYourPostsComponent } from './user-your-posts/user-your-posts.compon
 import { UserCreatePostComponent } from './user-create-post/user-create-post.component';
 import { UserSinglPostComponent } from './user-singl-post/user-singl-post.component';
 import { UserPostInCategoryComponent } from './user-post-in-category/user-post-in-category.component';
+import { UserGuard } from './user.guard';
 const routes: Routes = [
   {
     path: '',
     component: UserComponent,
     children: [
-      { path: 'login', component: UserloginComponent },
+      { path: '', component: UserloginComponent },
       { path: 'signup', component: UserSignupComponent },
       {
-        path: 'dashboard',
+        path:'dashboard',
+        canActivate:[ UserGuard] ,
         component: UserDashboardComponent,
         children: [
-          { path: 'latestPosts', component: UserLatestPostComponent },
+          { path: '', component: UserLatestPostComponent },
           { path: 'editPost', component: UserEditPostComponent },
           {path:'yourPosts',component:UserYourPostsComponent},
           {path:'createPost',component:UserCreatePostComponent},

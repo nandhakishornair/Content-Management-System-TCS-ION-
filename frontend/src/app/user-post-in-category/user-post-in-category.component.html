@@ -15,31 +15,31 @@
           <!-- <mat-card-content> content </mat-card-content> -->
     
           <mat-card-actions>
-            <button routerLink="/dashboard/editPost" mat-button matTooltipHideDelay="200" #tooltip="matTooltip"
+            <!-- <button routerLink="/dashboard/editPost" mat-button matTooltipHideDelay="200" #tooltip="matTooltip"
             matTooltip="edit Post">
-              <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+              <mat-icon class="u" aria-hidden="false" aria-label="{2:label} icon"
                 >edit</mat-icon
               >
-            </button>
-            <button mat-button  matTooltipHideDelay="200" #tooltip="matTooltip"
+            </button> -->
+            <!-- <button mat-button  matTooltipHideDelay="200" #tooltip="matTooltip"
             matTooltip="delete Post">
-              <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+              <mat-icon class="u"aria-hidden="false" aria-label="{2:label} icon"
                 >delete</mat-icon
               >
-            </button>
+            </button> -->
             <button routerLink="/dashboard/singlePost"
                 mat-button
                 matTooltipHideDelay="200"
                 #tooltip="matTooltip"
                 matTooltip="view post"
               >
-                <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+                <mat-icon (click)="preview(item._id)" class="u"aria-hidden="false" aria-label="{2:label} icon"
                   >preview</mat-icon
                 >
               </button>
             <button mat-button  matTooltipHideDelay="200" #tooltip="matTooltip"
-            matTooltip="you">
-                <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+            matTooltip="{{item.email}}">
+                <mat-icon class="u" aria-hidden="false" aria-label="{2:label} icon"
                   >account_circle</mat-icon
                 >
               </button>

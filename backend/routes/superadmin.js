@@ -1,4 +1,5 @@
 const superadmin = require("../models/superadmin");
+const admin_and_user = require("../models/admin-and-users")
 const express = require("express");
 const route = express.Router();
 
@@ -42,5 +43,39 @@ route.post("/login", (req, res) => {
       }
     });
   });
+route.get("/allusers",(req,res)=>{
+  admin_and_user.find({isAdmin:false}).then((data)=>{
+    console.log("data with users",data);
+    res.send(data)
+  }).catch((err)=>{
+    console.log("err ",err)
+  })
+})
+route.get("/alladmins",(req,res)=>{
+  admin_and_user.find({isAdmin:true}).then((data)=>{
+    console.log("data with admins",data);
+    res.send(data)
+  }).catch((err)=>{
+    console.log("err ",err)
+  })
+})
+route.put("/editStatus",(req,res)=>{
+   
+   if(req.body.isAdmin==true){
+    req.body.isAdmin = false;
+   }
+   else if(req.body.isAdmin==false){
+    req.body.isAdmin = true;
+   }
+  console.log("heeee",req.body)
+  console.log("dfgd",req.body);
+  
+  admin_and_user.findByIdAndUpdate( { _id: req.body._id },
+    { $set: { isAdmin:req.body.isAdmin} }
+  ).then(()=>{console.log("updated");
+res.send({message:"updated"})}).catch((err)=>{
+  res.send("error",err)
+});
+})
 
 module.exports = route;

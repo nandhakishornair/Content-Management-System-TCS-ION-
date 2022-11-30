@@ -40,4 +40,10 @@ return this.http.post("http://localhost:3000/admin/addCategory",data)
   // deletePost(categoryName:any){
   //   return this.http.delete("http://localhost:3000/admin/deleteCategory/"+categoryName)
   // }
+  viewLatestPost(){
+    return this.http.get("http://localhost:3000/admin/viewLatestPost")
+  }
+  viewApost(postid:any){
+    return this.http.get("http://localhost:3000/admin/viewApost/"+postid)
+  }
 }

@@ -1,0 +1,26 @@
+.des{
+    max-width: 100px;
+    min-width: 100px;
+    text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+}
+.displayYourPost{
+margin-bottom: 1%;
+}
+.displayYourPost:hover{
+    transform: scale(1.02);
+    /* cursor: pointer; */
+   }
+   .toolbar{
+    background-color: rgb(149, 149, 243);
+    width: 100%;
+    height: 40px;
+}
+.displayYourPost .u{
+    display: none;
+} 
+
+.displayYourPost:hover .u{
+ 
+ display: block;
+ 
+}

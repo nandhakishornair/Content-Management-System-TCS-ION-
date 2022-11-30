@@ -9,16 +9,16 @@
   </div>
 
   <div class="edit">
-    <form class="example-form">
+    <form (ngSubmit)="editpost()" class="example-form">
       <mat-form-field appearance="fill">
         <mat-label>CATEGORIES</mat-label>
-        <mat-select required>
+        <mat-select name="category"[(ngModel)]="post.category" required>
           <mat-option *ngFor="let item of category" value="{{item.categoryTitle}}">{{item.categoryTitle}}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>TITLE</mat-label>
-        <input matInput ngModel="{{post.description}}" name="title" required />
+        <input matInput [(ngModel)]="post.heading" name="title" required />
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
@@ -27,10 +27,10 @@
           rows="7"
           matInput
           name="description"
-          ngModel="{{post.description}}"
+          [(ngModel)]="post.description"
         ></textarea>
       </mat-form-field>
-      <button class="button" mat-button>submit</button>
+      <button type="submit" class="button" mat-button>submit</button>
     </form>
   </div>
 </div>

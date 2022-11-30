@@ -49,5 +49,8 @@ button{
   .main{
     background-color: antiquewhite;
   }
-
+.logo{
+  max-width: 90px;
+  border-radius: 50%;
+}
  

@@ -17,7 +17,13 @@
       <mat-divider></mat-divider>
                 <mat-form-field appearance="fill">
                   <mat-label>Description</mat-label>
-                  <input matInput name="Description"[(ngModel)]="data.description" />
+                  <textarea
+          rows="7"
+          matInput
+          name="description"
+          [(ngModel)]="data.description"
+        ></textarea>
+                  <!-- <input matInput name="Description"[(ngModel)]="data.description" /> -->
                 </mat-form-field>
       
               </mat-expansion-panel>

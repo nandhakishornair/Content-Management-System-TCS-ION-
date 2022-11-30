@@ -18,6 +18,9 @@ export class UserService {
       viewAllPost(){
         return this.http.get("http://localhost:3000/user/viewAllPost")
       }
+      viewLatestPost(){
+        return this.http.get("http://localhost:3000/user/viewLatestPost")
+      }
       
       viewCategory(){
         return this.http.get("http://localhost:3000/user/viewCategories")
@@ -31,14 +34,22 @@ export class UserService {
       viewPostsInCategory(categoryTitle:any){
         return this.http.get("http://localhost:3000/user/viewPostsInCategory/"+categoryTitle)
       }
-      updatePost(data:any){
-        return this.http.put("http://localhost:3000/user/updatePost",data)
+      updatePost(data:any,id:any){
+        return this.http.put("http://localhost:3000/user/updatePost/"+id,data)
       }
       viewYourPost(email:any){
         return this.http.get("http://localhost:3000/user/viewYourPost/"+email)
       }
       viewApost(postid:any){
         return this.http.get("http://localhost:3000/user/viewApost/"+postid)
+      }
+      getToken() {
+        return localStorage.getItem('user-token');
+      }
+    
+      // for auth guard
+      loggedIn() {
+        return !!localStorage.getItem('user-token');
       }
 
 }

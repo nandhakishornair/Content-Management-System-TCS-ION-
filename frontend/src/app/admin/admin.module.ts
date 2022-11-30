@@ -21,11 +21,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
-import { ManageAdminComponent } from './manage-admin/manage-admin.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
+ 
 
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { LatestpostsComponent } from './latestposts/latestposts.component';
@@ -40,7 +41,6 @@ import { PostFormComponent } from './post-form/post-form.component';
   declarations: [
     AdminComponent,
     LoginComponent,
-    ManageAdminComponent,
     AdminDashboardComponent,
     LatestpostsComponent,
     ViewCategoryComponent,
@@ -69,7 +69,9 @@ import { PostFormComponent } from './post-form/post-form.component';
     MatTableModule,
     MatChipsModule,
     MatExpansionModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule,
+    MatTooltipModule
     
   ]
 })

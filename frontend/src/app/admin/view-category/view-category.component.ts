@@ -37,6 +37,10 @@ export class ViewCategoryComponent implements OnInit {
   delete(data: any) {
     this.service.deleteCategory(data).subscribe((data) => {
       console.log(data);
+      let x = JSON.stringify(data);
+      if(x.match(/delete/)){
+        this.ngOnInit();
+      }
     });
   }
   // update(data:any){

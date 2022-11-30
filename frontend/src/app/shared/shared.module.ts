@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { UserService } from './user.service';
 import { AdminService } from './admin.service';
 import { SuperadminService } from './superadmin.service';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { StudTokenInterceptorService } from './stud-token-interceptor.service';
 
 
 
@@ -11,7 +13,8 @@ import { HttpClientModule} from '@angular/common/http';
   declarations: [],
   imports: [
     CommonModule,
-    HttpClientModule 
+    HttpClientModule ,
+    
   ],
   exports:[]
   
@@ -21,7 +24,11 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
-        UserService,AdminService,SuperadminService
+        UserService,AdminService,SuperadminService,{
+          provide:HTTP_INTERCEPTORS,
+          useClass: StudTokenInterceptorService,
+          multi:true
+        }
       ],
     };
  }

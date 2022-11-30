@@ -6,13 +6,15 @@ import { ViewCategoryComponent } from './view-category/view-category.component';
 import { LatestpostsComponent } from './latestposts/latestposts.component';
 import { CreateCategoryComponent } from './create-category/create-category.component';
 import { PostsComponent } from './posts/posts.component';
+import { SinglePostComponent } from './single-post/single-post.component';
 
 const routes: Routes = [{ path: '', component: LoginComponent },
- {path:"dashboard",component:AdminDashboardComponent,children:[
+ {path:"dashboard", component:AdminDashboardComponent,children:[
     {path:"",component:LatestpostsComponent},
     {path:"viewCategory",component:ViewCategoryComponent , children:[]},
     {path:"createCategory",component:CreateCategoryComponent},
-    {path:"posts",component:PostsComponent}
+    {path:"posts",component:PostsComponent},
+    {path:"singlePost",component:SinglePostComponent}
  ]}
 ];
 

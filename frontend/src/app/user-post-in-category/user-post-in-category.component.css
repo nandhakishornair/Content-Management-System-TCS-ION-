@@ -4,6 +4,11 @@ mat-toolbar{
     width: 100%;
     margin-bottom: 10px;
 }
+.displayYourPost:hover{
+    transform: scale(1.02);
+    /* cursor: pointer; */
+   }
+
 .add{
     color: green;  
 }
@@ -14,6 +19,14 @@ display: flex;
  transform: scale(1.02);
  /* cursor: pointer; */
 }
+.displayYourPost .u{
+    display: none;
+} 
+.displayYourPost:hover .u{
+ 
+    display: block;
+    
+   }
 .displayYourPost{
 margin-bottom: 8px;
 text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
