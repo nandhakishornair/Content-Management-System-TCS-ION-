@@ -18,4 +18,12 @@ export class SuperadminService {
   editPrivilage(data:any) {
     return this.http.put('http://localhost:3000/superadmin/editStatus' ,data);
   }
+  getToken() {
+    return localStorage.getItem('superadmin-token');
+  }
+
+  // for auth guard
+  loggedIn() {
+    return !!localStorage.getItem('superadmin-token');
+  }
 }

@@ -8,6 +8,26 @@ const { object } = require("joi");
 const category = require("../models/category");
 const post = require("../models/posts");
 const jwt = require("jsonwebtoken");
+
+
+function verifyToken(req, res, next) {
+    console.log(req.headers)
+  if(!req.headers.authorization) {
+    return res.status(401).send('Unauthorized request')
+  }
+  let token = req.headers.authorization.split(' ')[1]
+  console.log("token",token)
+  if(token === 'null') {
+    return res.status(401).send('Unauthorized request')    
+  }
+  let payload = jwt.verify(token, 'secretKey')
+  if(!payload) {
+    return res.status(401).send('Unauthorized request')    
+  }
+  req.userId = payload.subject
+  next()
+}
+
 try {
   route.post("/signup", async (req, res) => {
     console.log("body in signup route", req.body);
@@ -59,7 +79,7 @@ try {
               res.json({ message: "error while password comparison" });
             }
             if (resp) {
-              console.log("hai", resp);
+              // console.log("hai", resp);
               // res.json({ message: "password matching" });
               let payload = { subject: data.email + data.password };
               let token = jwt.sign(payload, "secretKey");
@@ -86,7 +106,7 @@ try {
 }
 
 try {
-  route.get("/viewCategories", (req, res) => {
+  route.get("/viewCategories",  (req, res) => {
     category.find().then((data) => {
       console.log("the categories are", data);
       res.send(data);
@@ -115,7 +135,7 @@ try {
 }
 
 try {
-  route.get("/viewYourPost/:email", (req, res) => {
+  route.get("/viewYourPost/:email",(req, res) => {
     email = req.params.email;
     console.log(email);
     post.find({ email: email }).then((data) => {

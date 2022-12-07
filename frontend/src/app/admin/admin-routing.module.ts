@@ -7,9 +7,10 @@ import { LatestpostsComponent } from './latestposts/latestposts.component';
 import { CreateCategoryComponent } from './create-category/create-category.component';
 import { PostsComponent } from './posts/posts.component';
 import { SinglePostComponent } from './single-post/single-post.component';
+import { AdminGuard } from '../shared/admin.guard';
 
 const routes: Routes = [{ path: '', component: LoginComponent },
- {path:"dashboard", component:AdminDashboardComponent,children:[
+ {path:"dashboard", canActivate:[ AdminGuard] , component:AdminDashboardComponent,children:[
     {path:"",component:LatestpostsComponent},
     {path:"viewCategory",component:ViewCategoryComponent , children:[]},
     {path:"createCategory",component:CreateCategoryComponent},

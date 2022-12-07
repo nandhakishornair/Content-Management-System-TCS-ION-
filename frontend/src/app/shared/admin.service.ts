@@ -46,4 +46,12 @@ return this.http.post("http://localhost:3000/admin/addCategory",data)
   viewApost(postid:any){
     return this.http.get("http://localhost:3000/admin/viewApost/"+postid)
   }
+  getToken() {
+    return localStorage.getItem('admin-token');
+  }
+
+  // for auth guard
+  loggedIn() {
+    return !!localStorage.getItem('admin-token');
+  }
 }

@@ -6,6 +6,7 @@ const route = express.Router();
 const bcrypt = require("bcrypt");
 const Category = require("../models/category");
 const post = require("../models/posts");
+const jwt = require("jsonwebtoken");
 try {
   route.post("/login", (req, res) => {
     console.log("inside the login route", req.body);
@@ -27,7 +28,15 @@ try {
               res.json({ message: "error while password comparison" });
             }
             if (resp) {
-              res.json({ message: "password matching" });
+              let payload = { subject: data.email + data.password };
+              let token = jwt.sign(payload, "secretKey");
+              res.json({
+                message: "password matching",
+                status: "success",
+                id: data._id,
+                tok: token,
+              });
+              // res.json({ message: "password matching" });
             } else {
               res.json({ message: "password donot match" });
             }

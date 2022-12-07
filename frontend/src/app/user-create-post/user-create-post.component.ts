@@ -11,16 +11,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-create-post.component.css']
 })
 export class UserCreatePostComponent implements OnInit {
-  // firstFormGroup = this._formBuilder.group({
-  //   firstCtrl: [ Validators.required],
-  // });
-  // secondFormGroup = this._formBuilder.group({
-  //   secondCtrl: ['', Validators.required],
-  // });
+  
   isEditable = true;
   constructor(private _formBuilder: FormBuilder,private service :UserService,private router :Router ) { }
 data={
-    // email:'',
     heading:'',
     description:'',
     category:''
@@ -47,7 +41,6 @@ this.service.createPost(data).subscribe((data)=>{
     Swal.fire({
       toast: true,
       color: 'green',
-      // background:'whit',
       icon: 'success',
       title: 'post created successfully',
       position: 'center-right',

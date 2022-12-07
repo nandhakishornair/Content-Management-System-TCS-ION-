@@ -8,14 +8,16 @@ import { UserService } from '../shared/user.service';
 })
 export class UserSignupComponent implements OnInit {
   constructor(private user: UserService) {}
-  // form: FormGroup = new FormGroup({
-  //   firstname: new FormControl(''),
-  //   lastname: new FormControl(''),
-  //   email: new FormControl('',[Validators.required, Validators.email]),
-  //   password: new FormControl(''),
-  //   adress: new FormControl(''),
-  //   city: new FormControl(false),
-  // });
+  form: FormGroup = new FormGroup({
+    firstname: new FormControl('',[Validators.required,Validators.minLength(2)]),
+    lastname: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required, Validators.email]),
+    password: new FormControl('',[Validators.required,Validators.minLength(5)]),
+    // adress: new FormControl(''),
+    city: new FormControl('',[Validators.required,Validators.minLength(2)]),
+    phone:new FormControl('',[Validators.required , Validators.pattern("[0-9 ]{10}")]),
+    state:new FormControl('',[Validators.required,Validators.minLength(2)])
+  });
   // submitted = false;
   Signup = {
     email: '',
@@ -29,22 +31,28 @@ export class UserSignupComponent implements OnInit {
   ngOnInit(): void {}
   hide = true;
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-  firstname = new FormControl('');
-  lastname = new FormControl('');
-  // email: new FormControl('',[Validators.required, Validators.email]);
-  password = new FormControl('');
-  city = new FormControl(false);
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
+  // email = new FormControl('', [Validators.required, Validators.email]);
+  // firstname = new FormControl('');
+  // lastname = new FormControl('');
+  // // email: new FormControl('',[Validators.required, Validators.email]);
+  // password = new FormControl('');
+  // city = new FormControl(false);
+  // getErrorMessage() {
+  //   if (this.email.hasError('required')) {
+  //     return 'You must enter a value';
+  //   }
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
+  //   return this.email.hasError('email') ? 'Not a valid email' : '';
+  // }
   adduser() {
-    this.user.SignupUser(this.Signup).subscribe((data) => {
-      console.log('subscribed in user-signup component', data);
-    });
+    if (this.form.invalid){
+      return;
+    }
+    else{
+      this.user.SignupUser(this.form.value).subscribe((data) => {
+        console.log('subscribed in user-signup component', data);
+      });
+    }
+   
   }
 }

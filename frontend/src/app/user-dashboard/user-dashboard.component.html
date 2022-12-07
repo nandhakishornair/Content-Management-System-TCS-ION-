@@ -1,23 +1,15 @@
 <div class="container">
-    <div class=" sidenav">
-      <mat-selection-list class="category" #shoes [multiple]="false">
-        <mat-list-option routerLink="/dashboard">Latest Posts</mat-list-option> 
-        <!-- <mat-list-option routerLink="">categories</mat-list-option> -->
-        <mat-list-option >view all posts</mat-list-option>
-        <!-- give edit and delete options -->
-        <mat-list-option routerLink="yourPosts">your posts</mat-list-option>
-        <mat-list-option routerLink="createPost">Create new posts</mat-list-option>
-        <mat-list-option >settings</mat-list-option>
-
-        
-        <!-- <mat-list-option>asdasdasd</mat-list-option> -->
-      </mat-selection-list>
-    </div>
-    <div class="outlet">
-      <router-outlet></router-outlet>
-   </div>
+  <div class="sidenav">
+    <mat-selection-list class="category" #shoes [multiple]="false">
+      <mat-list-option routerLink="/dashboard">Latest Posts</mat-list-option>
+      <mat-list-option routerLink="yourPosts">your posts</mat-list-option>
+      <mat-list-option routerLink="createPost"
+        >Create new posts</mat-list-option
+      >
+      <mat-list-option>settings</mat-list-option>
+    </mat-selection-list>
   </div>
-  
-  
-    
-  
+  <div class="outlet">
+    <router-outlet></router-outlet>
+  </div>
+</div>

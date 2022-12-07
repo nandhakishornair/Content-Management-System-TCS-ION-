@@ -12,10 +12,10 @@
     </a>
     <span class="example-spacer"></span>
     <div fxShow="true" fxHide.lt-md="true">
-      <a mat-button routerLink="">login</a>
-      <a mat-button routerLink="signup">signup</a>
+      <a mat-button routerLink=""*ngIf=" !user.loggedIn() && check() ">login</a>
+      <a mat-button routerLink="signup"*ngIf=" !user.loggedIn()&&  check()">signup</a>
       
-      <a mat-button routerLink="logout">logout</a>
+      <a mat-button (click)="clear()" routerLink=""*ngIf=" logout() ">logout</a>
     </div>
   </mat-toolbar>
   <mat-sidenav-container fxFlexFill class="example-container">
@@ -28,8 +28,9 @@
       fxHide.gt-sm="true"
     >
       <div fxLayout="column">
-        <a mat-button routerLink="">Login</a>
-        <a mat-button routerLink="signup">Signup</a>
+        <a mat-button routerLink=""*ngIf=" !user.loggedIn() && check() ">Login</a>
+        <a mat-button routerLink="signup"*ngIf=" !user.loggedIn() && check() ">Signup</a>
+        <a mat-button (click)="clear()"routerLink=""*ngIf="  logout() ">logout</a>
       </div>
     </mat-sidenav>
     <mat-sidenav-content class="main" fxFlexFill>

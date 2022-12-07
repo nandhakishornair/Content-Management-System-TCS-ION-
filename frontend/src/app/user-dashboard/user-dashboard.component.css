@@ -1,6 +1,22 @@
 .sidenav{
-    width:20%;
+   min-width:20%;
     background-color:rgb(149, 149, 243);
+}@media screen and (max-width: 575px) {
+  .sidenav {
+    background-color:rgb(83, 83, 93);
+    width:100%;
+    margin-bottom: 2%;
+  }
+  .category{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+   
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .outlet{

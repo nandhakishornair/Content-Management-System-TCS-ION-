@@ -2,6 +2,7 @@ const superadmin = require("../models/superadmin");
 const admin_and_user = require("../models/admin-and-users")
 const express = require("express");
 const route = express.Router();
+const jwt = require("jsonwebtoken");
 
 route.post("/asa",(req,res)=>{
   let datas = {
@@ -31,8 +32,16 @@ route.post("/login", (req, res) => {
         
         
         if(req.body.password === data.password){
-            console.log("password matching")
-            res.json({message:"password matching"})
+          let payload = { subject: data.email + data.password };
+              let token = jwt.sign(payload, "secretKey");
+              res.json({
+                message: "password matching",
+                status: "success",
+                id: data._id,
+                tok: token,
+              });
+            // console.log("password matching")
+            // res.json({message:"password matching"})
         }
         else{
             res.send({message:"invalid password"})

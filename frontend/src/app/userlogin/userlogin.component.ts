@@ -19,11 +19,12 @@ export class UserloginComponent implements OnInit {
   userdata() {
     console.log(this.login);
     this.user.userlogin(this.login).subscribe((data:any) => {
-      localStorage.setItem('user-token',data.tok);
+      
       console.log('data from backend in user login compt', data);
       let regx = /password matching/;
       let x = JSON.stringify(data.message);
       if (x.match(regx)) {
+        localStorage.setItem('user-token',data.tok);
         console.log('succ:');
         Swal.fire({
           toast: true,

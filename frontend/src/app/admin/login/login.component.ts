@@ -20,11 +20,14 @@ export class LoginComponent implements OnInit {
   hide = true;
 
   adminlogin(){
-    this.service.adminLogin(this.login).subscribe((data)=>{
+    this.service.adminLogin(this.login).subscribe((data:any)=>{
+      localStorage.setItem('admin-token',data.tok);
       console.log("subscribed data",data)
-      let x = JSON.stringify(data)
+      let x = JSON.stringify(data.message)
       if(x.match(/password matching/)){
         console.log('succ:');
+       
+        console.log('data from backend in user login compt', data);
         Swal.fire({
           toast: true,
           color: 'green',
@@ -36,7 +39,7 @@ export class LoginComponent implements OnInit {
           timer: 3000,
         }).then(()=>{
           this._router.navigate(['admin/dashboard'])
-          localStorage.clear();
+          // localStorage.clear();
           localStorage.setItem("Adminemail",this.login.email)
         })
       }

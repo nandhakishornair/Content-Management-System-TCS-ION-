@@ -18,11 +18,12 @@ export class LoginComponent implements OnInit {
   }
   hide = true;
   superadminlogin(){
-    this.service.SupreadminLogin(this.login).subscribe((data)=>{
+    this.service.SupreadminLogin(this.login).subscribe((data:any)=>{
       console.log("the data from backend is :::",data)
-      let x = JSON.stringify(data);
+      let x = JSON.stringify(data.message);
       if(x.match(/password matching/)){
         console.log('succ:');
+        localStorage.setItem('superadmin-token',data.tok);
         Swal.fire({
           toast: true,
           color: 'green',
@@ -34,8 +35,8 @@ export class LoginComponent implements OnInit {
           timer: 3000,
         }).then(()=>{
           this._router.navigate(['superadmin/dashboard'])
-          localStorage.clear();
-          localStorage.setItem("Adminemail",this.login.email)
+          // localStorage.clear();
+          localStorage.setItem("superadmin",this.login.email)
         })
       }
       else{
